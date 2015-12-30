@@ -1,0 +1,22 @@
+---
+# tasks file for git
+- name: (RedHat) install...
+  when: ansible_os_family == 'RedHat'
+  yum: name={{item}} state=latest
+  with_items:
+    - git
+
+- name: (Debian) install...
+  when: ansible_os_family == 'Debian'
+  apt: name={{item}} state=latest
+  with_items:
+    - git
+
+- name: install system gitconfig
+  template: >-
+    src=etc/gitconfig.j2
+    dest=/etc/gitconfig
+    owner=root
+    group=root
+    mode=0644
+    

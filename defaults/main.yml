@@ -1,0 +1,6 @@
+---
+# defaults file for git
+
+# system level gitconfig settings
+git_config_protocol_map :
+  - { url: 'http://', insteadOf : 'git://' }
