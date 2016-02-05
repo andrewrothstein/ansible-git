@@ -1,7 +1,7 @@
 ---
 # tasks file for git
 - name: install...
-  package: name={{item}} state=latest
+  package: name={{item}} state=present
   with_items:
     - git
 
