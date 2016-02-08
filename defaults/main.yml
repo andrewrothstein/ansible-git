@@ -3,5 +3,5 @@
 
 # system level gitconfig settings
 git_config_protocol_map :
-  - { url: 'ssh://git@', insteadOf : 'git://' }
-  - { url: 'ssh://git@', insteadOf : 'https://' }
+  - { url: 'ssh://git@github.com', insteadOf : 'git://github.com' }
+  - { url: 'https://', insteadOf : 'git://' }
