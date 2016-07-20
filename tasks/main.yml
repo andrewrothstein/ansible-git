@@ -1,15 +1,17 @@
 ---
 # tasks file for git
 - name: install...
+  become: yes
+  become_user: root
   package: name={{item}} state=present
   with_items:
     - git
 
 - name: install system gitconfig
+  become: yes
+  become_user: root
   template: >-
     src=etc/gitconfig.j2
     dest=/etc/gitconfig
-    owner=root
-    group=root
     mode=0644
     
