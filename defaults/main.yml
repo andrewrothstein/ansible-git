@@ -5,3 +5,6 @@
 git_config_protocol_map :
   - { url: 'ssh://git@github.com', insteadOf : 'git://github.com' }
   - { url: 'https://', insteadOf : 'git://' }
+
+git_privilege_escalation : True
+git_target_cfg: /etc/gitconfig

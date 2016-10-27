@@ -18,6 +18,10 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - trusty
+    - name: GenericUnix
+      versions:
+        - all
+        - any
 
   galaxy_tags:
     - development
