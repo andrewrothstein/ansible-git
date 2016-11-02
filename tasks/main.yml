@@ -25,6 +25,7 @@
     dest: '{{git_target_cfg}}'
     mode: 0644
     state: present
+    marker: "# {mark} ANSIBLE MANAGED BLOCK {{item['uid']}}"
     block: |
       [url "{{item['url']}}"]
         insteadOf = {{item['insteadOf']}}

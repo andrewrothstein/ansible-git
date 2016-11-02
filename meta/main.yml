@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Andrew Rothstein
-  description: git role
+  description: installs and configures git
   company: BlackRock
   license:
     - MIT
@@ -12,12 +12,10 @@ galaxy_info:
         - 7
     - name: Fedora
       versions:
-        - 21
-        - 22
-        - 23
+        - 24
     - name: Ubuntu
       versions:
-        - trusty
+        - xenial
     - name: GenericUnix
       versions:
         - all
