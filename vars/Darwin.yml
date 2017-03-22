@@ -1,3 +1,2 @@
 ---
 git_privilege_escalation : False
-git_target_cfg: ~/.gitconfig

@@ -1,2 +1,3 @@
 ---
 # vars file for git
+git_target_cfg: '{% if git_privilege_escalation %}{{git_sys_config}}{% else %}{{git_usr_config}}{% endif %}'

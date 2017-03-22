@@ -12,4 +12,5 @@ git_config_protocol_map :
     insteadOf : 'git://'
 
 git_privilege_escalation : True
-git_target_cfg: /etc/gitconfig
+git_sys_config: /etc/gitconfig
+git_usr_config: ~/.gitconfig
