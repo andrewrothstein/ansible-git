@@ -1,20 +1,23 @@
 ---
 - name: resolve platform specific vars
-  include_vars: "{{item}}"
+  include_vars: '{{item}}'
   with_first_found:
     - files:
-      - "{{ansible_distribution}}-{{ansible_distribution_release}}.yml"
-      - "{{ansible_distribution}}.yml"
-      - "{{ansible_os_family}}.yml"
+        - '{{ansible_distribution}}-{{ansible_distribution_release}}.yml'
+        - '{{ansible_distribution}}.yml'
+        - '{{ansible_os_family}}.yml'
       skip: true
+      paths:
+        - '{{role_path}}/vars'
 
-# tasks file for git
 - name: install...
   become: '{{git_privilege_escalation}}'
   become_user: root
-  package: name={{item}} state=present
   with_items:
     - git
+  package:
+    name: '{{item}}'
+    state: present
 
 - name: configurate git
   become: '{{git_privilege_escalation}}'
