@@ -13,10 +13,8 @@
 - name: install...
   become: '{{ git_privilege_escalation }}'
   become_user: root
-  with_items:
-    - git
   package:
-    name: '{{ item }}'
+    name: '{{ git_os_pkgs | default(["git"]) }}'
     state: present
 
 - name: configurate git

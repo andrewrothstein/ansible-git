@@ -1,0 +1,3 @@
+---
+git_os_pkgs:
+  - dev-vcs/git
