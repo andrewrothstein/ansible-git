@@ -17,4 +17,7 @@ git_usr_config: ~/.gitconfig
 
 git_os_pkgs:
   - git
+
+git_lfs_enable: False
+git_lfs_os_pkgs:
   - git-lfs
