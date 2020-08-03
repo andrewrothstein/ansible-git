@@ -1,3 +1,4 @@
 ---
 git_os_pkgs:
   - dev-vcs/git
+  - dev-vcs/git-lfs

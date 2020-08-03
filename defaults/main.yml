@@ -14,3 +14,7 @@ git_config_protocol_map:
 git_privilege_escalation: True
 git_sys_config: /etc/gitconfig
 git_usr_config: ~/.gitconfig
+
+git_os_pkgs:
+  - git
+  - git-lfs

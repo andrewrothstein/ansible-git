@@ -14,7 +14,7 @@
   become: '{{ git_privilege_escalation }}'
   become_user: root
   package:
-    name: '{{ git_os_pkgs | default(["git"]) }}'
+    name: '{{ git_os_pkgs }}'
     state: present
 
 - name: configurate git
