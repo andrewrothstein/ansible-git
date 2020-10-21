@@ -12,10 +12,10 @@
 - name: install git from source
   include_role:
     name: andrewrothstein.git_build
-  when: "{{ git_installer_type == 'source' }}"
+  when: git_installer_type == 'source'
 
 - include_tasks: '{{ git_installer_type }}.yml'
-  when: "{{ git_installer_type != 'source' }}"
+  when: git_installer_type != 'source' 
 
 - name: configurate git
   become: '{{ git_privilege_escalation }}'
