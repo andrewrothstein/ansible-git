@@ -14,7 +14,9 @@ See [meta/main.yml](meta/main.yml)
 Role Variables
 --------------
 
-> Note: If git_installer is toggled from Homebrew (brew) to either source, which builds program from released package, or Package Manager (pkg), please make sure the executable is re-linked if you want to leverage the Homebrew version: `brew unlink git && brew link git`
+> Note: 
+> * If git_installer is toggled from Homebrew (brew) to either source, which builds program from released package, or Package Manager (pkg), please make sure the executable is re-linked if you want to leverage the Homebrew version: `brew unlink git && brew link git`
+> * If `git_installer == 'source'` developers should install the following ansible role: [andrewrothstein.git_build](https://github.com/andrewrothstein/ansible-git_build)
 
 See [defaults/main.yml](defaults/main.yml). With v3.0.0+ of the role
 each mapping needs to have a UID associated with it.

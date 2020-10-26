@@ -14,7 +14,7 @@
     name: andrewrothstein.git_build
   when: git_installer == 'source'
 
-- include_tasks: '{{ git_installer_type }}.yml'
+- include_tasks: '{{ git_installer }}.yml'
   when: git_installer != 'source' 
 
 - name: configurate git
