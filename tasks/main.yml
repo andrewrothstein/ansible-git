@@ -9,21 +9,13 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
+- name: install git from source
+  include_role:
+    name: andrewrothstein.git_build
+  when: git_installer == 'source'
 
-- name: install git os pkgs...
-  become: '{{ git_privilege_escalation }}'
-  become_user: root
-  package:
-    name: '{{ git_os_pkgs }}'
-    state: present
-
-- name: install git-lfs os pkgs...
-  when: git_lfs_enable
-  become: '{{ git_privilege_escalation }}'
-  become_user: root
-  package:
-    name: '{{ git_lfs_os_pkgs }}'
-    state: present
+- include_tasks: '{{ git_installer }}.yml'
+  when: git_installer != 'source' 
 
 - name: configurate git
   become: '{{ git_privilege_escalation }}'
