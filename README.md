@@ -36,12 +36,12 @@ Important that each URL mapping rule have a UUID
   roles:
     - role: andrewrothstein.git
 	  git_config_protocol_map:
-	    - uid: '93f2b82088e744739a4cfb8a3df68925'
-		  url: 'ssh://git@github.com'
-		  insteadOf : 'git://github.com'
-		- uid: '5446806d328f42dc8be2e6d1e6139aa8'
-		  url: 'https://'
-		  insteadOf : 'git://'
+        - uid: '93f2b82088e744739a4cfb8a3df68925'
+          url: ssh://git@github.com
+          insteadOf : git://github.com
+        - uid: '5446806d328f42dc8be2e6d1e6139aa8'
+          url: https://
+          insteadOf : git://
 ```
 
 License
