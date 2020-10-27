@@ -35,7 +35,7 @@ Important that each URL mapping rule have a UUID
 - hosts: servers
   roles:
     - role: andrewrothstein.git
-	  git_config_protocol_map:
+      git_config_protocol_map:
         - uid: '93f2b82088e744739a4cfb8a3df68925'
           url: ssh://git@github.com
           insteadOf : git://github.com
