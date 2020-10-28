@@ -14,8 +14,9 @@
     name: andrewrothstein.git_build
   when: git_installer == 'source'
 
-- include_tasks: '{{ git_installer }}.yml'
-  when: git_installer != 'source' 
+- name: running {{ git_installer }} installer...
+  include_tasks: '{{ git_installer }}.yml'
+  when: git_installer != 'source'
 
 - name: configurate git
   become: '{{ git_privilege_escalation }}'
