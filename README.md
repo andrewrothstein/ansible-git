@@ -1,6 +1,6 @@
 andrewrothstein.git
 =========
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-git.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-git)
+![Build Status](https://github.com/andrewrothstein/ansible-git/actions/workflows/build.yml/badge.svg)
 
 Installs and configures git.
 On Linux it installs a global configuration /etc/gitconfig
