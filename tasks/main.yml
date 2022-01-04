@@ -23,7 +23,7 @@
   become_user: root
   with_items: '{{ git_config_protocol_map }}'
   blockinfile:
-    create: yes
+    create: true
     dest: '{{ git_target_cfg }}'
     mode: 0644
     state: present

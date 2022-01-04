@@ -12,13 +12,13 @@ git_config_protocol_map:
     url: 'https://'
     insteadOf: 'git://'
 
-git_privilege_escalation: True
+git_privilege_escalation: true
 git_sys_config: /etc/gitconfig
 git_usr_config: ~/.gitconfig
 
 git_os_pkgs:
   - git
 
-git_lfs_enable: False
+git_lfs_enable: false
 git_lfs_os_pkgs:
   - git-lfs
