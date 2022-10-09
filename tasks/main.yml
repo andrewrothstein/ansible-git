@@ -18,16 +18,16 @@
   include_tasks: '{{ git_installer }}.yml'
   when: git_installer != 'source'
 
-- name: configurate git
+- name: configurating git in {{ git_target_cfg }}
   become: '{{ git_privilege_escalation }}'
   become_user: root
-  with_items: '{{ git_config_protocol_map }}'
+  with_items: '{{ git_config_protocol_map | default([]) }}'
   blockinfile:
     create: true
     dest: '{{ git_target_cfg }}'
     mode: 0644
-    state: present
-    marker: "# {mark} ANSIBLE MANAGED BLOCK {{ item['uid'] }}"
+    state: '{% if item.enabled | default(true) %}present{% else %}absent{% endif %}'
+    marker: "# {mark} ANSIBLE MANAGED BLOCK {{ item.uid }}"
     block: |
-      [url "{{ item['url'] }}"]
-        insteadOf = {{ item['insteadOf'] }}
+      [url {{ item.url | quote }}]
+        insteadOf = {{ item.insteadOf }}
