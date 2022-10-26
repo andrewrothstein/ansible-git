@@ -29,5 +29,5 @@
     state: '{% if item.enabled | default(true) %}present{% else %}absent{% endif %}'
     marker: "# {mark} ANSIBLE MANAGED BLOCK {{ item.uid }}"
     block: |
-      [url {{ item.url | quote }}]
+      [url "{{ item.url }}"]
         insteadOf = {{ item.insteadOf }}
