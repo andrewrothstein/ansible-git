@@ -30,8 +30,5 @@ galaxy_info:
         - bionic
         - focal
         - jammy
-
   galaxy_tags:
     - development
-
-dependencies: []
