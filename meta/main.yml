@@ -30,3 +30,4 @@ galaxy_info:
         - jammy
   galaxy_tags:
     - development
+  role_name: git
