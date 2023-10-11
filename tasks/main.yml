@@ -26,7 +26,7 @@
     create: true
     dest: '{{ git_target_cfg }}'
     mode: 0644
-    state: '{% if item.enabled | default(true) %}present{% else %}absent{% endif %}'
+    state: '{{ "present" if item.enabled | default(true) else "absent" }}'
     marker: "# {mark} ANSIBLE MANAGED BLOCK {{ item.uid }}"
     block: |
       [url "{{ item.url }}"]
