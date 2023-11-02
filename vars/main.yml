@@ -1,4 +1,4 @@
 ---
 # vars file for git
-git_target_cfg: |
+git_target_cfg: |-
   {{- git_sys_config if git_privilege_escalation else git_usr_config -}}
