@@ -1,6 +1,6 @@
 ---
-- name: resolve platform specific vars
-  include_vars: '{{ item }}'
+- name: Resolve platform specific vars
+  ansible.builtin.include_vars: '{{ item }}'
   with_first_found:
     - files:
         - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
@@ -9,23 +9,23 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: install git from source
-  include_role:
+- name: Install git from source
+  ansible.builtin.include_role:
     name: andrewrothstein.git_build
   when: git_installer == 'source'
 
-- name: running {{ git_installer }} installer...
-  include_tasks: '{{ git_installer }}.yml'
+- name: Running {{ git_installer }} installer...
+  ansible.builtin.include_tasks: '{{ git_installer }}.yml'
   when: git_installer != 'source'
 
-- name: configurating git in {{ git_target_cfg }}
+- name: Configurating git in {{ git_target_cfg }}
   become: '{{ git_privilege_escalation }}'
   become_user: root
   with_items: '{{ git_config_protocol_map | default([]) }}'
-  blockinfile:
+  ansible.builtin.blockinfile:
     create: true
     dest: '{{ git_target_cfg }}'
-    mode: 0644
+    mode: '644'
     state: '{{ "present" if item.enabled | default(true) else "absent" }}'
     marker: "# {mark} ANSIBLE MANAGED BLOCK {{ item.uid }}"
     block: |

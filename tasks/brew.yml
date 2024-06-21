@@ -1,5 +1,5 @@
 ---
-- name: installing git with homebrew
-  homebrew:
+- name: Installing git with homebrew
+  community.general.homebrew:
     name: git
     state: present

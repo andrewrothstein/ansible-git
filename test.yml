@@ -1,5 +1,6 @@
 ---
-- hosts: all
+- name: Testing andrewrothstein.git
+  hosts: all
   vars:
     git_config_protocol_map:
       - enabled: false
@@ -17,8 +18,10 @@
   roles:
     - role: '{{ playbook_dir }}'
   tasks:
-    - command: git config -l
+    - name: Executing 'git config -l'
+      ansible.builtin.command: git config -l
+      changed_when: false
       register: git_config_test
-    - name: git config -l
-      debug:
+    - name: Output of 'git config -l'
+      ansible.builtin.debug:
         msg: '{{ git_config_test.stdout }}'
